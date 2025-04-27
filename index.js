@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 2025;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/users", userInformation);
-app.use("/users", userInformation);
+
 
 app.get("/", (req, res) => {
   res.send("Welcome to the fruits API");
