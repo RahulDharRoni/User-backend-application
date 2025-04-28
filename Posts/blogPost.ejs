@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create New Post</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #eef1f5;
+        padding: 20px;
+      }
+      .container {
+        background: #fff;
+        max-width: 600px;
+        margin: auto;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-top: 12px;
+        font-weight: bold;
+      }
+      input,
+      textarea,
+      select {
+        margin-top: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      input[type="file"] {
+        padding: 5px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 12px;
+        background: #1877f2;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #155ec1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Create a New Post</h2>
+      <form action="/posts" method="POST" enctype="multipart/form-data">
+        <!-- User ID -->
+        <label for="user">User ID:</label>
+        <input type="text" id="user" name="user" required />
+
+        <!-- Content -->
+        <label for="content">Post Content:</label>
+        <textarea id="content" name="content" rows="4" required></textarea>
+
+        <!-- Images -->
+        <label for="images">Upload Images:</label>
+        <input
+          type="file"
+          id="images"
+          name="imageUrls"
+          multiple
+          accept="image/*"
+        />
+
+        <!-- Visibility -->
+        <label for="visibility">Visibility:</label>
+        <select id="visibility" name="visibility" required>
+          <option value="Public">Public</option>
+          <option value="Friends">Friends</option>
+          <option value="Private">Private</option>
+        </select>
+
+        <!-- Shared Post (optional) -->
+        <label for="sharedPost">Shared Post ID (if any):</label>
+        <input type="text" id="sharedPost" name="sharedPost" />
+
+        <button type="submit">Post</button>
+      </form>
+    </div>
+  </body>
+</html>

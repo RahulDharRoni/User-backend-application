@@ -14,7 +14,7 @@ const router = express.Router();
 
 router.get("/", create_products);
 router.get("/all_products", get_products);
-router.get("/create_products_html", registration);
+router.get("/products_html", registration);
 router.get("/:id", get_productsById);
 
 // New user
