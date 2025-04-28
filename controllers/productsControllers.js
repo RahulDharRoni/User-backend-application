@@ -103,9 +103,6 @@ async function get_products(req, res) {
 
 async function new_products(req, res) {
   try {
-    req.body.status === "login"
-      ? (req.body.status = true)
-      : (req.body.status = false);
     const create_new_products = await products.create(req.body);
     console.log(create_new_products);
     res.status(201).json(create_new_products);

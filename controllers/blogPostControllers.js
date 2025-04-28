@@ -75,9 +75,6 @@ async function get_blog_post(req, res) {
 
 async function new_blog_post(req, res) {
   try {
-    req.body.status === "login"
-      ? (req.body.status = true)
-      : (req.body.status = false);
     const create_new_blog_post = await Post.create(req.body);
     console.log(create_new_blog_post);
     res.status(201).json(create_new_blog_post);
@@ -88,7 +85,7 @@ async function new_blog_post(req, res) {
 
 async function registration(req, res) {
   try {
-    res.render("../blog_post/blog_post.ejs");
+    res.render("../Posts/blogPost.ejs");
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -111,6 +108,9 @@ async function update_blog_post(req, res) {
     res.status(400).json({ error: error.message });
   }
 }
+
+
+
 async function delete_blog_post(req, res) {
   try {
     const { id } = req.params;

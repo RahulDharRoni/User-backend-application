@@ -57,7 +57,10 @@
   <body>
     <div class="container">
       <h2>Add Grocery Product</h2>
-      <form action="/post_new_product" method="POST">
+      <form
+        action="http://localhost:2025/products/post_new_product"
+        method="POST"
+      >
         <label for="name">Product Name:</label>
         <input type="text" id="name" name="name" required />
 
